@@ -1,0 +1,37 @@
+Добавление ПОЛЬЗОВАТЕЛЯ
+
+{
+    "firstName" : "Dima",
+    "lastName" : "Lubskiy",
+    "email" : "dima@gmail.com",
+    "numberPhone" : "12345678",
+    "position" : "place_1",
+    "jobPlace" : "Office"
+}
+
+ДОБАВЛЕНИЕ ПК
+
+{
+    "motherboard" : "z690",
+    "processor" : "i3",
+    "videocard" : "3060",
+    "RAM" : "16gb",
+    "keyboard"  : "ocklik",
+    "monitor" : "veiwsonic",
+    "userId" : "f49633a6-f145-4f3a-a2a1-5896d7c9a042"
+}
+
+@ userId это айди пользователя к которому прикрепляется ПК.
+
+
+ОБНОВЛЕНИЕ СТРОКИ
+
+{
+    "id" : "54b83733-bd32-4c06-85cb-2e21a69b7b87",
+    "key" : "motherboard",
+    "motherboard" : "h550"
+}
+
+@ Вместо "motherboard" вписываем  переменную, которую хотим изменить, кроме id. 
+
+УДАЛЕНИЕ ПК
