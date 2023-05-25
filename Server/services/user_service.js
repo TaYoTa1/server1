@@ -41,12 +41,13 @@ class UserService {
         }
 
     }
-    async DeleteUser(req) {
-        {
-            const { id } = req.body;
-            
-            await prisma_client.user.deleteMany({"where" : { "id": id}})
-            return { "error" : "SUCCESS" }
+    async DelUser(req, res, next)
+    {
+        try {
+            res.json(await user_service.DeleteUser(req))
+        } catch(e) {
+            console.log(e)
+            res.json({"error": "EXCEPTION"})
         }
     }
     async UpdateUser(req)
