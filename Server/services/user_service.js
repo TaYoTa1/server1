@@ -44,10 +44,32 @@ class UserService {
     async DelUser(req, res, next)
     {
         try {
-            res.json(await user_service.DeleteUser(req))
-        } catch(e) {
+            const {id} = req.body
+            console.log(id)
+            const user = await prisma_client.user.findFirst(
+                {
+                    "where": {
+                        "id": id
+                    }
+                }
+            )
+
+            if (!user) {
+                return { "ERROR": "user not found" }
+            }
+
+            const result = await prisma_client.user.delete(
+                {
+                    "where": {
+                        "id": id
+                    }
+                }
+            )
+
+            return result
+
+        } catch (e) {
             console.log(e)
-            res.json({"error": "EXCEPTION"})
         }
     }
     async UpdateUser(req)

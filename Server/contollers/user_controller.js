@@ -17,10 +17,11 @@ class UserController {
             res.json({"error": "EXCEPTION"})
         }
     }
+
     async DelUser(req, res, next) {
         {
             try {
-                res.json(await userService.DeleteUser(req))
+                res.json(await userService.DelUser(req))
             } catch(e) {
                 console.log(e)
                 res.json({"error": "EXCEPTION"})
